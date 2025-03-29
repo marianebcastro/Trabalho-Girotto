@@ -1,0 +1,454 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main () {
+  setlocale(LC_ALL, "portuguese_brazil");
+  int opcao;
+  printf("MENU DE JOGOS:\n");
+  printf("1. Pergunta e Resposta\n");
+  printf("2. Cobra na Caixa!\n");
+  printf("3. Gousmas War\n");
+  printf("4. Sair\n");
+  printf("Escolha uma opção: ");
+  scanf("%d", &opcao);
+  printf("\n");
+
+  while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4){
+    printf("Opção inválida. Escolha novamente: ");
+    scanf("%d", &opcao);
+    printf("\n");
+  }
+
+  while(opcao != 4){
+    int r1, r2, r3;
+    if(opcao == 1) {
+      r1 = 1;
+        while(r1 != 0){
+          char resposta;
+            printf("Você escolheu o jogo Pergunta e Resposta. Vamos lá!\n");
+            printf("1. Onde foi tirada a primeira fotografia do Brasil?\n");
+            printf(" a) São Paulo\n b) Salvador\n c) Rio de Janeiro\n d) Fortaleza\n");
+            scanf(" %c", &resposta);
+            while(resposta != 'a' && resposta != 'b' && resposta != 'c' && resposta != 'd'){
+              printf("Resposta inválida. Tente novamente: ");
+              scanf(" %c", &resposta);
+            }
+          if(resposta != 'c') {
+              printf("Errado, a resposta certa é a letra c (Rio de Janeiro)\n");
+
+              }	else {
+                printf("Parabéns, reposta correta!\n");
+              }
+
+            printf("2. Qual o maior órgão do corpo humano?\n");
+            printf(" a) Intestino\n b) Pele\n c) Pulmão\n d) Cérebro\n");
+            scanf(" %c", &resposta);
+          while(resposta != 'a' && resposta != 'b' && resposta != 'c' && resposta != 'd'){
+            printf("Resposta inválida. Tente novamente: ");
+            scanf(" %c", &resposta);
+          }
+            if(resposta != 'b') {
+              printf("Errado, a resposta certa é a letra b (Pele)\n");
+            }	else {
+                printf("Parabéns, reposta correta!\n");
+            }
+          printf("3. Em que ano ocorreu a proclamação da república?\n");
+            printf(" a) 1889\n b) 1822\n c) 1888\n d) 1864\n");
+            scanf(" %c", &resposta);
+          while(resposta != 'a' && resposta != 'b' && resposta != 'c' && resposta != 'd'){
+            printf("Resposta inválida. Tente novamente: ");
+            scanf(" %c", &resposta);
+          }
+            if(resposta != 'a') {
+              printf("Errado, a resposta certa é a letra a (1889)\n");
+            }	else {
+                printf("Parabéns, reposta correta!\n");
+          }
+
+          printf("4. Quem inventou o telefone?\n");
+            printf(" a) Alexander Graham Bell\n b) Alan Turing\n c) Hedy Lamarr\n d) Tim Berners-Lee\n");
+            scanf(" %c", &resposta);
+          while(resposta != 'a' && resposta != 'b' && resposta != 'c' && resposta != 'd'){
+            printf("Resposta inválida. Tente novamente: ");
+            scanf(" %c", &resposta);
+          }
+            if(resposta != 'a') {
+              printf("Errado, a resposta certa é a letra a (Alexander Graham Bell)\n");
+            }	else {
+                printf("Parabéns, reposta correta!\n");
+            }
+
+              printf("5. Quem inventou a Barbie?\n");
+            printf(" a) Ruth Handler\n b) Chris Wiggs\n c) Yuko Shimizu\n d) Bonnie Zacherle\n");
+            scanf(" %c", &resposta);
+          while(resposta != 'a' && resposta != 'b' && resposta != 'c' && resposta != 'd'){
+            printf("Resposta inválida. Tente novamente: ");
+            scanf(" %c", &resposta);
+          }
+            if(resposta != 'a') {
+              printf("Errado, a resposta certa é a letra a (Ruth Handler)\n");
+            }	else {
+                printf("Parabéns, reposta correta!\n");
+            }
+          printf("\n");
+          printf("Deseja jogar novamente? Digite 1 para sim ou 0 para retornar ao menu: ");
+          scanf("%d", &r1);
+          while(r1 != 0 && r1 != 1){
+            printf("Opção inválida. Digite novamente: ");
+            scanf("%d", &r1);
+          }
+        }
+
+    }
+
+    if(opcao == 2){
+      r2 = 1;
+      while(r2 != 0){
+        int personagem1, personagem2, caixa;
+
+          printf("Você escolheu o jogo Cobra na Caixa!\n");
+            printf("Historia: Dois exploradores acabaram presos em uma tumba egípcia.\n Quando a exploram, percebem que em seu centro há 5 caixas.\n Uma delas contém o botão para abrir a porta, enquanto outra contém uma cobra mortal.\n O objetivo é que um dos exploradores encontre o botão de saída.\n Caso algum dos exploradores encontre a cobra, ambos perdem o jogo.\n");
+            printf("Jogador(a) 1, escolha seu personagem:\n");
+            printf(" 1. Howard Carter\n 2. João Rohr\n 3. Auguste Mariette\n 4. Peter Lund\n 5. Luiz Faria\n 6. Mary Leakey\n 7. Margaret Murray\n");
+            scanf("%d", &personagem1);
+
+         while(personagem1 < 1 || personagem1 > 7){
+           printf("Opção inválida, por favor, escolha novamente.\n");
+           scanf("%d", &personagem1);
+         }
+
+
+
+          printf("Jogador(a) 2, escolha seu personagem:\n");
+            printf("1. Howard Carter\n 2. João Rohr\n 3. Auguste Mariette\n 4. Peter Lund\n 5. Luiz Faria\n 6. Mary Leakey\n 7. Margaret Murray\n");
+            scanf("%d", &personagem2);
+           while(personagem2 < 1 || personagem2 > 7 || personagem2 == personagem1 ){
+           printf("Opção inválida, por favor, escolha novamente.\n");
+           scanf("%d", &personagem1);
+         }
+
+         int cobra, bot;
+         cobra = rand()%5;
+         bot = rand()%5;
+
+         while( cobra == bot){
+          cobra = rand()%5;
+              bot = rand()%5;
+         }
+          printf("Jogador 1, escolha uma caixa:\n");
+          printf("0. Caixa\n 1. Caixa1\n 2. Caixa2\n 3. Caixa3\n 4. Caixa4\n");
+          scanf("%d", &caixa);
+
+          while(caixa<0 || caixa>4){
+            printf("Caixa inválida, escolha novamente: ");
+             scanf("%d", &caixa);
+          }
+
+          if(caixa == cobra){
+            printf("Você perdeu");
+          }
+         if(caixa == bot){
+            printf("Você ganhou");
+          }
+          if(caixa != cobra && caixa != bot){
+            printf("Vez do Jogador 2: ");
+            scanf("%d", &caixa);
+
+          while(caixa<0 || caixa>4){
+            printf("Caixa inválida, escolha novamente: ");
+             scanf("%d", &caixa);
+          }
+           if(caixa == cobra){
+            printf("Você perdeu");
+          }
+         if(caixa == bot){
+            printf("Você ganhou");
+          }
+
+          if(caixa != cobra && caixa != bot){
+            printf("Tente novamente jogador numero 1: ");
+            scanf("%d", &caixa);
+          while(caixa<0 || caixa>4){
+            printf("Caixa inválida, escolha novamente: ");
+             scanf("%d", &caixa);
+          }
+            if(caixa == cobra){
+              printf("Você perdeu");
+            }
+            if(caixa == bot){
+              printf("Você ganhou");
+            }
+
+
+
+          }
+          }
+
+        printf("\nDeseja jogar novamente? Digite 1 para sim ou 0 para retornar ao menu: ");
+        scanf("%d", &r2);
+        while(r2 != 0 && r2 != 1){
+          printf("Opção inválida. Digite novamente: ");
+          scanf("%d", &r2);
+        }
+      }
+    }
+    if(opcao == 3){
+      r3 = 1;
+      while(r3 != 0){
+        int gousmas1 = 2, gousmas2 = 2, nf1 =1 , nf2 = 1, nf3 = 1, nf4 = 1, g1 =1, g2 = 2, g3 =1, g4 = 2, duplicar, atack;
+        printf("BEM VINDO AO GOUSMAS WAR! \n");
+
+        while(gousmas1 > 0 && gousmas2 > 0){
+
+          if(gousmas1 == 1){
+            printf("\n Jogador um você tem apenas um gousmas essa é a sua chance de dividi-los para dois, deseja duplicar? 1 para sim e 2 para não:");
+            scanf("%d", &duplicar);
+            while(duplicar != 1 && duplicar != 2){
+              printf("Valor inválido: ");
+              scanf("%d", &duplicar);
+            }
+            if(duplicar == 1){
+              gousmas1 = gousmas1 + 1;
+              if(nf1 > 5){
+                if(nf2 == 1){
+                nf2 = 1;
+                nf1 = 1;
+                }
+                if(nf2 == 2){
+                nf2 = 1;
+                nf1 = 1;
+                }if(nf2 == 3){
+                nf2 = 2;
+                nf1 = 1;
+                }if(nf2 == 4){
+                nf2 = 2;
+                nf1 = 2;
+                }if(nf2 == 5){
+                nf2 = 3;
+                nf1 = 2;
+                }
+              }
+              if(nf2 > 5){
+                if(nf1 == 1){
+                nf1 = 1;
+                nf2 = 1;
+                }
+                if(nf1 == 2){
+                nf1 = 1;
+                nf2 = 1;
+                }if(nf1 == 3){
+                nf1 = 2;
+                nf2 = 1;
+                }if(nf1 == 4){
+                nf1 = 2;
+                nf2 = 2;
+                }if(nf1 == 5){
+                nf1 = 3;
+                nf2 = 2;
+                }
+              }
+            }
+          }
+          if(gousmas2 == 1){
+            printf("\n Jogador dois você tem apenas um gousmas essa é a sua chance de dividi-los para dois, deseja duplicar? 1 para sim e 2 para não:");
+            scanf("%d", &duplicar);
+            while(duplicar != 1 && duplicar != 2){
+              printf("Valor inválido: ");
+              scanf("%d", &duplicar);
+            }
+            if(duplicar == 1){
+              gousmas2 = gousmas2 + 1;
+              if(nf3 > 5){
+                if(nf4 == 1){
+                nf4 = 1;
+                nf3 = 1;
+                }
+                if(nf4 == 2){
+                nf4 = 1;
+                nf3 = 1;
+                }if(nf4 == 3){
+                nf4 = 2;
+                nf3 = 1;
+                }if(nf4 == 4){
+                nf4 = 2;
+                nf3 = 2;
+                }if(nf4 == 5){
+                nf4 = 3;
+                nf3 = 2;
+                }
+              }
+              if(nf4 > 5){
+                if(nf3 == 1){
+                nf3 = 1;
+                nf4 = 1;
+                }
+                if(nf3 == 2){
+                nf3 = 1;
+                nf4 = 1;
+                }if(nf3 == 3){
+                nf3 = 2;
+                nf4 = 1;
+                }if(nf3 == 4){
+                nf3 = 2;
+                nf4 = 2;
+                }if(nf3 == 5){
+                nf3 = 3;
+                nf4 = 2;
+                }
+              }
+            }
+          }
+          if(gousmas1 == 2 && gousmas2 == 2){
+            printf("   %d       %d          %d       %d\n" , nf1, nf2,nf3,nf4);
+            printf("/|@ @|/ /|@ @|/    /|@ @|/ /|@ @|/\n");
+            printf("\n");
+            printf("  Jogador 1           Jogador 2");
+            printf("\n");
+          }
+          if(gousmas1 == 1 && gousmas2 == 2){
+            if(nf1 == 6){
+              printf("%d          %d       %d\n", nf2,nf3,nf4);
+              printf(" /|@ @|/    /|@ @|/ /|@ @|/\n");
+              printf("\n");
+              printf("  Jogador 1           Jogador 2");
+              printf("\n");
+            }
+            if(nf2 == 6){
+              printf("   %d          %d       %d\n" , nf1,nf3,nf4);
+              printf("/|@ @|/    /|@ @|/ /|@ @|/\n");
+              printf("\n");
+              printf("  Jogador 1           Jogador 2");
+              printf("\n");
+            }
+          }
+          if(gousmas1 == 2 && gousmas2 == 1){
+            if(nf3 == 6){
+              printf("   %d       %d          %d\n" , nf1, nf2,nf4);
+              printf("/|@ @|/ /|@ @|/     /|@ @|/\n");
+              printf("\n");
+              printf("  Jogador 1           Jogador 2");
+              printf("\n");
+            }
+            if(nf4 == 6){
+              printf("   %d       %d          %d\n" , nf1, nf2,nf3);
+              printf("/|@ @|/ /|@ @|/    /|@ @|/\n");
+              printf("\n");
+              printf("  Jogador 1           Jogador 2");
+              printf("\n");
+            }
+          }
+          if(gousmas1 == 1 && gousmas2 == 1){
+            if(nf1 == 6 && nf3 == 6){
+              printf(" %d             %d\n" ,nf2,nf4);
+              printf(" /|@ @|/     /|@ @|/\n");
+              printf("\n");
+              printf("  Jogador 1    Jogador 2");
+              printf("\n");
+            }
+            if(nf1 == 6 && nf4 == 6){
+              printf(" %d             %d\n" ,nf2,nf3);
+              printf(" /|@ @|/     /|@ @|/\n");
+              printf("\n");
+              printf("  Jogador 1    Jogador 2");
+              printf("\n");
+            }
+            if(nf2 == 6 && nf3 == 6){
+              printf(" %d             %d\n" , nf1,nf4);
+              printf(" /|@ @|/     /|@ @|/\n");
+              printf("\n");
+              printf("  Jogador 1    Jogador 2");
+              printf("\n");
+            }
+            if(nf2 == 6 && nf4 == 6){
+              printf(" %d             %d\n" , nf1, nf3);
+              printf(" /|@ @|/     /|@ @|/\n");
+              printf("\n");
+              printf("  Jogador 1    Jogador 2");
+              printf("\n");
+            }
+          }
+
+          printf("\nJogador 1 escolha um gousmas do Jogador 2 para atacar: ");
+          scanf("%d", &atack);
+          while(atack != 1 && atack != 2){
+            printf("Comando inválido, tente novamente: ");
+            scanf("%d", &atack);
+          }
+          while(atack == 1 && nf3 == 6){
+            printf("Ataque invalido esse gousmas está morto, tente novamente:");
+            scanf("%d", &atack);
+          }
+          if(atack == 1){
+            nf3 = nf3 + 1;
+            if(nf3 > 5){
+              gousmas2 = gousmas2 - 1;
+            }
+          }
+          while(atack == 1 && nf4 == 6){
+            printf("Ataque invalido esse gousmas está morto, tente novamente:");
+            scanf("%d", &atack);
+          }
+          if(atack == 2){
+            nf4 = nf4 + 1;
+            if(nf4 > 5){
+              gousmas2 = gousmas2 - 1;
+            }
+          }
+          printf("\nJogador 2 escolha um gousmas do Jogador 1 para atacar: ");
+              scanf("%d", &atack);
+              while(atack != 1 && atack != 2){
+                printf("Comando inválido, tente novamente: ");
+                scanf("%d", &atack);
+              }
+              while(atack == 1 && nf1 == 6){
+                printf("Ataque invalido esse gousmas está morto, tente novamente:");
+                scanf("%d", &atack);
+              }
+              if(atack == 1){
+                nf1 = nf1 + 1;
+                if(nf1 > 5){
+                  gousmas1 = gousmas1 - 1;
+                }
+              }
+          while(atack == 1 && nf2 == 6){
+            printf("Ataque invalido esse gousmas esta morto, tente novamente:");
+            scanf("%d", &atack);
+          }
+          if(atack == 2){
+            nf2 = nf2 + 1;
+            if(nf2 > 5){
+              gousmas1 = gousmas1 - 1;
+            }
+          }
+        }
+
+        printf("Deseja jogar novamente? Digite 1 para sim ou 0 para retornar ao menu: ");
+        scanf("%d", &r3);
+        while(r3 != 0 && r3 != 1){
+          printf("Opção inválida. Digite novamente: ");
+          scanf("%d", &r3);
+        }
+      }
+
+    }
+
+  printf("\nMENU DE JOGOS:\n");
+  printf("1. Pergunta e Resposta\n");
+  printf("2. Cobra na Caixa!\n");
+  printf("3. Gousmas War\n");
+  printf("4. Sair\n");
+  printf("Escolha uma opção: ");
+  scanf("%d", &opcao);
+  printf("\n");
+  while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4){
+    printf("Opção inválida. Escolha novamente: ");
+    scanf("%d", &opcao);
+    printf("\n");
+  }
+  }
+
+printf("Fim dos jogos. Obrigado por jogar!");
+return 0;
+}
